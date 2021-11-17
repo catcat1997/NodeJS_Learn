@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            {{ each datas }} {{ set temp = $value.job }}
+            <div>
+                <label for="">用戶名</label>
+                <input type="text" value="{{ $value.username }}">
+                <label for="">年齡</label>
+                <input type="text" value="{{ $value.age }}">
+
+            </div>
+            <div>
+                <label for="">職業</label>
+
+                <select name="" id="">
+                {{each jobs}}
+                
+                {{ if temp === $value.id}}
+                <option value="{{ $value.id }}" selected>{{ $value.name }}</option>
+                {{else}}
+                <option value="{{ $value.id }}" >{{ $value.name }}</option>
+                {{/if }}
+                <!-- <option value="1">學生</option>
+                <option value="2">老師</option>
+                <option value="3">司機</option>
+                <option value="4">畫家</option>
+                <option value="5">演員</option>
+                <option value="6">玩家</option> -->
+                {{ /each }}
+            </select>
+            </div>
+            {{ /each }}
+        </div>
+    </form>
+    <script>
+        // 用戶表
+        //      其中一個接口獲取用戶數據
+        // job:2
+        // 職業信息 (job:2 所以去獲取id=2的職業)
+        //      其中一個接口獲取所有職業信息
+    </script>
+</body>
+
+</html>

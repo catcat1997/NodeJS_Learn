@@ -1,0 +1,45 @@
+{
+    "users": [{
+            "id": 1,
+            "username": "admin",
+            "age": 18,
+            "job": 2
+        }, {
+            "id": 2,
+            "username": "admin2",
+            "age": 24,
+            "job": 4
+        },
+        {
+            "id": 3,
+            "username": "admin3",
+            "age": 35,
+            "job": 6
+        }
+    ],
+    "jobs": [{
+            "id": 1,
+            "name": "學生"
+        },
+        {
+            "id": 2,
+            "name": "老師"
+        },
+        {
+            "id": 3,
+            "name": "司機"
+        },
+        {
+            "id": 4,
+            "name": "畫家"
+        },
+        {
+            "id": 5,
+            "name": "演員"
+        },
+        {
+            "id": 6,
+            "name": "玩家"
+        }
+    ]
+}

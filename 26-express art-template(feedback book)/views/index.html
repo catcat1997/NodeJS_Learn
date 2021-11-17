@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 瀏覽器收到html響應內容之後,  就要開始由上到下解析,
+        當在解析的過程中, 如果發現:
+        link script img video audio iframe
+        等具有 src 或 link內的href屬性的時候 (a標簽的href不算),
+        ***瀏覽器會自動對這些資源發起新的請求。
+    -->
+    <!-- 根目錄是指邏輯驅動器的最上一級目錄，也就是儲存子目錄的目錄，本地根目錄例如C盤、D盤等；
+        網站根目錄指的是一個服務器上同時放置多個站點使用，或者一個大規模站點需要放置在幾個服務器上。
+        “/”則表示根目錄，例如D盤下 images 文件夾裡名稱為“aaa.jpg”文件，
+        書寫為：﹤img src="/images/aaa.jpg"﹥ 
+    -->
+    <!-- 
+        注意: 在服務端中, 文件中的路徑就不要寫相對路徑了,
+        因為這個時候所有的資源都是通過 url 標識來獲取的
+        我的服務器開放了 /public/ 目錄
+        所以這里的請求路徑都寫成: /public/xxx
+        / 在這里就是 url根路徑的意思
+        瀏覽器在真正請求的時候會自動把 http://127.0.0.1:3000 拼上去
+        ** 不要再想成文件路徑了, 把所有路徑都想象成 url 路徑 **
+     -->
+    <!-- <link rel="stylesheet" href="../public/css/bootstrap.css"> 雖然也可以 ../在請求時會自動消失-->
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+
+</head>
+
+<body>
+    <div class="header container">
+        <div class="page-header">
+            <h1>Example page header <small>Subtext for header</small></h1>
+            <a class="btn btn-success" href="/post">發表留言</a>
+            <!-- href直接/post 就是127.0.0.1:3000/post -->
+            <!-- nodeJS的server.listen使 app.js的位置成了127.0.0.1:3000 -->
+
+        </div>
+    </div>
+
+    <div class="comments container">
+        <ul class="list-group">
+            <!-- 這裡的{s{each comments 內$value}s}相當於vue的 v-for的item -->
+            <!-- art template會讀到注釋內的語法, 小心注釋影響到 -->
+            {{each comments}}
+            <li class="list-group-item">{{ $value.name }} 說: {{ $value.message }}
+                <span class="pull-right">{{ $value.dateTime }}</span>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</body>
+
+</html>

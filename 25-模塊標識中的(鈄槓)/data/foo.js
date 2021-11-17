@@ -1,0 +1,1 @@
+console.log('foo.js被加載了!');

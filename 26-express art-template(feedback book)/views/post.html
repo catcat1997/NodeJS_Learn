@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="header container">
+        <div class="page-header">
+            <h1><a href="/index.html">首頁</a><small>發表留言</small></h1>
+        </div>
+    </div>
+    <div class="comments container">
+        <!-- 表單提交有兩種:
+            1.默認的提交行為
+            2.表單異步提交(寫code)
+            form內的action與method:
+            action就是表單提交的地址,就是請求url地址
+            會轉跳到action頁面 /postComments?name=123&message=12344
+            method請求方法
+
+        -->
+        <!--  method用post, action就不用轉url地址了 -->
+        <form action="/post" method="post">
+            <div class="form-group">
+                <label for="input_name">你的大名</label>
+                <input type="text" class="form-control" required minlength="2" maxlength="10" id="input_name" placeholder="Your Name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="textarea_message">留言內容</label>
+                <textarea class="form-control" name="message" id="textarea_message" cols="30" rows="10" required minlength="5" maxlength="20"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">發表</button>
+        </form>
+    </div>
+</body>
+
+</html>

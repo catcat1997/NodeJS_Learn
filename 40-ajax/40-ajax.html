@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="username">
+    <input type="button" onclick="checkUsername()" value="檢測用戶名是否合法">
+    <div id="result">
+    </div>
+
+
+    <script type="text/javascript">
+        var xhr = new XMLHttpRequest();
+
+        function checkUsername() {
+
+            //創建http請求
+            xhr.open("POST", "http://127.0.0.1:3000/b", false);
+
+            //因為我使用的是post方式，所以需要設置消息頭
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            //指定回調函數
+            xhr.onreadystatechange = response22;
+
+            //得到文本框的數據
+            var name = document.getElementById("username").value;
+
+            //發送http請求，把要檢測的用戶名傳遞進去
+            xhr.send("username=" + name);
+
+        }
+
+        function response22() {
+
+            //判斷請求狀態碼是否是4【數據接收完成】
+            if (xhr.readyState == 4) {
+
+                //再判斷狀態碼是否為200【200是成功的】
+                if (xhr.status == 200) {
+
+                    //得到服務端返回的文本數據
+                    var text = xhr.responseText;
+
+                    //把服務端返回的數據寫在div上
+                    var div = document.getElementById("result");
+                    div.innerText = text;
+                }
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+    "students": [
+        { "id": 1, "name": "petereditt", "gender": "1", "age": "21" },
+        { "id": 3, "name": "張三3", "gender": "1", "age": "212" },
+        { "id": 4, "name": "張三4", "gender": "1", "age": "21" },
+        { "id": 5, "name": "張三5", "gender": 0, "age": 21 },
+        { "id": 6, "name": "張三6", "gender": 1, "age": 21 },
+        { "id": 7, "name": "張三7", "gender": 1, "age": 21 },
+        { "id": 8, "name": "張三8", "gender": 1, "age": 21 },
+        { "id": 9, "name": "張三9", "gender": "1", "age": "21" },
+        { "name": "第10人", "gender": "0", "age": "44", "id": 10 },
+        { "name": "第11人", "gender": "0", "age": "16", "id": 11 },
+        { "name": "12女", "gender": "0", "age": "27", "id": 12 },
+        { "name": "13Boys", "gender": "1", "age": "5", "id": 13 },
+        { "name": "14MANNNNN", "gender": "1", "age": "66", "id": 14 },
+        { "name": "15csscc", "id": 15, "gender": 2, "age": 350 },
+        { "name": "18ssss", "gender": "1", "age": "223", "id": 18 },
+        { "name": "ssssss", "gender": "1", "age": "33", "id": 19 }
+    ]
+}

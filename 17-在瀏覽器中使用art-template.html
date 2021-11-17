@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./node_modules/art-template/lib/template-web.js">
+    </script>
+    <script type="text/template" id="tpl">
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+
+            <title>Document</title>
+        </head>
+
+        <body>
+            <!-- 在瀏覽器中需要引用template-web.js 這個文件 -->
+            <!--  type="text/javascript" 是跑javascript的意思 -->
+            <!-- 強調: 模板引擎不關心你的字符串內容是什麼, 只關心自己能認識的模板標記語法,
+                例如: {{}} mustache語法 -->
+            <p>hello my name is {{name}}, </p>
+            <h1>I'm {{age}} years old, </h1>
+            <h2>I came from {{country}}.</h2>
+        </body>
+
+        </html>
+    </script>
+    <script>
+        var ret = template('tpl', {
+            name: 'jack',
+            age: '18',
+            country: 'taiwan'
+        })
+        console.log(ret);
+    </script>
+</body>
+
+</html>
